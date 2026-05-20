@@ -2396,12 +2396,15 @@ function handleTap(tapX,tapY){
 
 function clientToGame(clientX, clientY){
   if(!_portrait){
-    return {x: clientX, y: clientY};
+    return {
+      x: clientX,
+      y: clientY
+    };
   }
-  const vw = window.innerWidth;
+
   return {
-    x: clientY,
-    y: vw - clientX,
+    x: _gameW - clientY,
+    y: clientX
   };
 }
 
